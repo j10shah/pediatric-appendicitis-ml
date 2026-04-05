@@ -16,6 +16,10 @@ class Model(ABC):
         self.hyper_parms = hyper_parms
 
     @abstractmethod
+    def assign_hyperparams(self):
+        pass
+
+    @abstractmethod
     def get_weights(self):
         pass
 
