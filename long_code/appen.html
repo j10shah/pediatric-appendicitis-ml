@@ -7811,7 +7811,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7822,7 +7822,7 @@ a.anchor-link {
 
 <span class="c1"># in Jupyter notebooks __file__ is not defined, use current working directory</span>
 <span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">'../pediatric-appendicitis-ml/dataset/allcases.csv'</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">'../dataset/allcases.csv'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7844,7 +7844,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  Drop the "ghost" Excel columns (anything starting with 'Unnamed')</span>
@@ -7916,7 +7916,7 @@ Data is scaled, encoded, and ready for TensorFlow!
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/jw/xfwp5tfs0wqc3vnyzr3wn_c80000gn/T/ipykernel_63185/1974740586.py:23: Pandas4Warning: For backward compatibility, 'str' dtypes are included by select_dtypes when 'object' dtype is specified. This behavior is deprecated and will be removed in a future version. Explicitly pass 'str' to `include` to select them, or to `exclude` to remove them and silence this warning.
+<pre>/var/folders/jw/xfwp5tfs0wqc3vnyzr3wn_c80000gn/T/ipykernel_26625/1974740586.py:23: Pandas4Warning: For backward compatibility, 'str' dtypes are included by select_dtypes when 'object' dtype is specified. This behavior is deprecated and will be removed in a future version. Explicitly pass 'str' to `include` to select them, or to `exclude` to remove them and silence this warning.
 See https://pandas.pydata.org/docs/user_guide/migration-3-strings.html#string-migration-select-dtypes for details on how to write code that works with pandas 2 and 3.
   categorical_cols = X.select_dtypes(include=['object']).columns
 </pre>
@@ -7940,7 +7940,7 @@ See https://pandas.pydata.org/docs/user_guide/migration-3-strings.html#string-mi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
@@ -8008,17 +8008,41 @@ See https://pandas.pydata.org/docs/user_guide/migration-3-strings.html#string-mi
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>2026-04-08 18:21:01.544544: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M2 Max
+2026-04-08 18:21:01.544578: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 96.00 GB
+2026-04-08 18:21:01.544582: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 38.88 GB
+2026-04-08 18:21:01.544754: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2026-04-08 18:21:01.544765: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -&gt; physical PluggableDevice (device: 0, name: METAL, pci bus id: &lt;undefined&gt;)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Diagnosis classes: ['appendicitis' 'no appendicitis']
 
 --- Diagnosis | Logistic Regression | 5-Fold CV ---
-  Fold 1 Val Accuracy: 80.80%
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>2026-04-08 18:21:01.788053: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>  Fold 1 Val Accuracy: 81.60%
   Fold 2 Val Accuracy: 83.20%
-  Fold 3 Val Accuracy: 84.80%
-  Fold 4 Val Accuracy: 82.26%
-  Fold 5 Val Accuracy: 86.29%
-Mean CV Accuracy: 83.47% (+/- 1.92%)
-Holdout Test Accuracy: 81.53%
+  Fold 3 Val Accuracy: 85.60%
+  Fold 4 Val Accuracy: 81.45%
+  Fold 5 Val Accuracy: 83.87%
+Mean CV Accuracy: 83.14% (+/- 1.54%)
+Holdout Test Accuracy: 80.25%
 </pre>
 </div>
 </div>
@@ -8115,14 +8139,14 @@ Severity distribution (train): {0: 95, 1: 529}
 Class weights: {0: 3.2842105263157895, 1: 0.5897920604914934}
 
 --- Severity | Logistic Regression | 5-Fold CV (with class weights) ---
-  Fold 1 Val Accuracy: 80.80%
-  Fold 2 Val Accuracy: 79.20%
-  Fold 3 Val Accuracy: 76.00%
-  Fold 4 Val Accuracy: 72.00%
-  Fold 5 Val Accuracy: 74.19%
-Mean CV Accuracy: 76.44% (+/- 3.21%)
+  Fold 1 Val Accuracy: 81.60%
+  Fold 2 Val Accuracy: 74.40%
+  Fold 3 Val Accuracy: 75.20%
+  Fold 4 Val Accuracy: 80.80%
+  Fold 5 Val Accuracy: 79.84%
+Mean CV Accuracy: 78.37% (+/- 2.98%)
 Holdout Test Accuracy: 80.25%
-<span class="ansi-bold">5/5</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">0s</span> 6ms/step 
+<span class="ansi-bold">5/5</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">0s</span> 5ms/step 
 
 Confusion Matrix:
 [[ 22   2]
@@ -8137,6 +8161,144 @@ uncomplicated       0.98      0.78      0.87       133
      accuracy                           0.80       157
     macro avg       0.71      0.85      0.73       157
  weighted avg       0.90      0.80      0.83       157
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ef421f9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Management Target — Multiclass Logistic Regression with K-Fold CV</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5f710371">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ── MANAGEMENT (3-class: conservative / primary surgical / secondary surgical) ──</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">keras.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_categorical</span>
+
+<span class="c1"># Align y_management to the same train/test split indices</span>
+<span class="n">y_mgmt_train</span> <span class="o">=</span> <span class="n">y_management</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X_train</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">y_mgmt_test</span>  <span class="o">=</span> <span class="n">y_management</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X_test</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+
+<span class="c1"># Merge the 1-sample "simultaneous appendectomy" into "secondary surgical"</span>
+<span class="n">y_mgmt_train</span> <span class="o">=</span> <span class="n">y_mgmt_train</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'simultaneous appendectomy'</span><span class="p">,</span> <span class="s1">'secondary surgical'</span><span class="p">)</span>
+<span class="n">y_mgmt_test</span>  <span class="o">=</span> <span class="n">y_mgmt_test</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'simultaneous appendectomy'</span><span class="p">,</span> <span class="s1">'secondary surgical'</span><span class="p">)</span>
+
+<span class="n">valid_train_mgmt</span> <span class="o">=</span> <span class="n">y_mgmt_train</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+<span class="n">valid_test_mgmt</span>  <span class="o">=</span> <span class="n">y_mgmt_test</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">le_mgmt</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y_tr_mgmt</span> <span class="o">=</span> <span class="n">le_mgmt</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_mgmt_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid_train_mgmt</span><span class="p">])</span>
+<span class="n">y_te_mgmt</span> <span class="o">=</span> <span class="n">le_mgmt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y_mgmt_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid_test_mgmt</span><span class="p">])</span>
+<span class="n">X_tr_mgmt</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid_train_mgmt</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X_te_mgmt</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid_test_mgmt</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">n_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">le_mgmt</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Management classes:"</span><span class="p">,</span> <span class="n">le_mgmt</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Distribution (train):"</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_tr_mgmt</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">))))</span>
+
+<span class="c1"># One-hot encode labels for categorical_crossentropy</span>
+<span class="n">y_tr_mgmt_oh</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_tr_mgmt</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">n_classes</span><span class="p">)</span>
+<span class="n">y_te_mgmt_oh</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_te_mgmt</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">n_classes</span><span class="p">)</span>
+
+<span class="c1"># Class weights to handle imbalance (conservative &gt;&gt; primary surgical &gt;&gt; secondary surgical)</span>
+<span class="n">weights_mgmt</span> <span class="o">=</span> <span class="n">compute_class_weight</span><span class="p">(</span><span class="s1">'balanced'</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_tr_mgmt</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">y_tr_mgmt</span><span class="p">)</span>
+<span class="n">class_weight_mgmt</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">weights_mgmt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Class weights:"</span><span class="p">,</span> <span class="n">class_weight_mgmt</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_multiclass_model</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+        <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,)),</span>
+        <span class="n">Dense</span><span class="p">(</span><span class="n">n_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'softmax'</span><span class="p">)</span>
+    <span class="p">])</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">'categorical_crossentropy'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="c1"># K-Fold CV</span>
+<span class="n">skf_mgmt</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">fold_accs_mgmt</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Management | Logistic Regression | 5-Fold CV (with class weights) ---"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">fold</span><span class="p">,</span> <span class="p">(</span><span class="n">train_idx</span><span class="p">,</span> <span class="n">val_idx</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">skf_mgmt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X_tr_mgmt</span><span class="p">,</span> <span class="n">y_tr_mgmt</span><span class="p">)):</span>
+    <span class="n">X_f_tr</span><span class="p">,</span> <span class="n">X_f_val</span> <span class="o">=</span> <span class="n">X_tr_mgmt</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">X_tr_mgmt</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+    <span class="n">y_f_tr</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_tr_mgmt</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">n_classes</span><span class="p">)</span>
+    <span class="n">y_f_val</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_tr_mgmt</span><span class="p">[</span><span class="n">val_idx</span><span class="p">],</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">n_classes</span><span class="p">)</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">build_multiclass_model</span><span class="p">(</span><span class="n">X_tr_mgmt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_classes</span><span class="p">)</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_f_tr</span><span class="p">,</span> <span class="n">y_f_tr</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="n">class_weight_mgmt</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_f_val</span><span class="p">,</span> <span class="n">y_f_val</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fold_accs_mgmt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Fold </span><span class="si">{</span><span class="n">fold</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> Val Accuracy: </span><span class="si">{</span><span class="n">acc</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean CV Accuracy: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">fold_accs_mgmt</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% (+/- </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">fold_accs_mgmt</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%)"</span><span class="p">)</span>
+
+<span class="c1"># Final model on all training data</span>
+<span class="n">model_mgmt</span> <span class="o">=</span> <span class="n">build_multiclass_model</span><span class="p">(</span><span class="n">X_tr_mgmt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_classes</span><span class="p">)</span>
+<span class="n">model_mgmt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_mgmt</span><span class="p">,</span> <span class="n">y_tr_mgmt_oh</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="n">class_weight_mgmt</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">test_acc_mgmt</span> <span class="o">=</span> <span class="n">model_mgmt</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_te_mgmt</span><span class="p">,</span> <span class="n">y_te_mgmt_oh</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Holdout Test Accuracy: </span><span class="si">{</span><span class="n">test_acc_mgmt</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+
+<span class="c1"># Confusion matrix &amp; classification report</span>
+<span class="n">y_pred_mgmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">model_mgmt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_te_mgmt</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Confusion Matrix:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_te_mgmt</span><span class="p">,</span> <span class="n">y_pred_mgmt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Classification Report:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_te_mgmt</span><span class="p">,</span> <span class="n">y_pred_mgmt</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">le_mgmt</span><span class="o">.</span><span class="n">classes_</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Management classes: ['conservative' 'primary surgical' 'secondary surgical']
+Distribution (train): {0: 386, 1: 215, 2: 23}
+Class weights: {0: 0.538860103626943, 1: 0.9674418604651163, 2: 9.043478260869565}
+
+--- Management | Logistic Regression | 5-Fold CV (with class weights) ---
+  Fold 1 Val Accuracy: 74.40%
+  Fold 2 Val Accuracy: 76.80%
+  Fold 3 Val Accuracy: 70.40%
+  Fold 4 Val Accuracy: 75.20%
+  Fold 5 Val Accuracy: 73.39%
+Mean CV Accuracy: 74.04% (+/- 2.13%)
+Holdout Test Accuracy: 80.25%
+<span class="ansi-bold">5/5</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">0s</span> 5ms/step 
+
+Confusion Matrix:
+[[79  7 11]
+ [ 4 43  8]
+ [ 0  1  4]]
+
+Classification Report:
+                    precision    recall  f1-score   support
+
+      conservative       0.95      0.81      0.88        97
+  primary surgical       0.84      0.78      0.81        55
+secondary surgical       0.17      0.80      0.29         5
+
+          accuracy                           0.80       157
+         macro avg       0.66      0.80      0.66       157
+      weighted avg       0.89      0.80      0.84       157
 
 </pre>
 </div>
