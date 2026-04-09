@@ -7,7 +7,7 @@ import numpy as np
 
 
 
-def run_model(model : Model, epochs = 300):
+def run_model(model : Model, epochs = 500):
     data = DataLoader('data.csv', False)
 
     train_X, train_y, test_X, test_y = data.train_test_split(.7,0)
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     gb = GradientBoosting(
         {
             "tree_depth": 3,
-            "learning_rate": .1,
+            "learning_rate": .01,
         },
         log_path= 'src/logs/gb_log.csv'
     )

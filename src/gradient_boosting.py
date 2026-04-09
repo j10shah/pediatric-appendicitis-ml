@@ -19,9 +19,12 @@ class GradientBoosting(Model):
         y_pred = np.clip(y_pred ,.00001, .99999)
         return -np.mean(y_act * np.log(y_pred) + (1-y_act) * np.log(1-y_pred))
     
+    def sig(self, A):
+        return 1 / (1 + np.exp(-A))
+
     def grad_cross_entropy(self, y_pred, y_act):
-        y_pred = np.clip(y_pred ,.00001, .99999)
-        return y_act - y_pred
+        # y_pred = np.clip(y_pred ,.00001, .99999)
+        return y_act - self.sig(y_pred)
 
     def assign_hyperparams(self): #don't need number of trees, that's covered with number of epochs
         self.tree_depth = self.hyper_parms["tree_depth"]
@@ -61,14 +64,16 @@ class GradientBoosting(Model):
         f_n = tree.DecisionTreeRegressor(max_depth=self.tree_depth)
         f_n.fit(X, R_n)
         
-        gamma = np.sum(y - predictions) / np.sum(predictions * (1 - predictions))
+        p = self.sig(predictions)
+        gamma = np.sum(y - predictions) / np.sum(p * (1 - p))
 
         #then calculate model contribution to the ensemble - LEAF WISE
         # leaves = f_n.apply(X)
         # gammas = {}
         # for leaf in np.unique(leaves):
         #     leaf_indexes = np.where(leaves == leaf)
-        #     gamma = np.sum(y[leaf_indexes] - predictions[leaf]) / np.sum(predictions[leaf_indexes] * (1 - predictions[leaf_indexes]))
+        #     p = self.sig(predictions[leaf_indexes])
+        #     gamma = np.sum(y[leaf_indexes] - predictions[leaf_indexes]) / np.sum(p * (1 - p))
         #     gammas[leaf] = gamma
 
         self.models.append(f_n)
