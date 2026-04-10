@@ -8,6 +8,7 @@ class DataLoader():
         if from_csv:
             self.X = pd.read_csv(csv_path + '_x.csv')
             self.y = pd.read_csv(csv_path + '_y.csv')
+            self.cleaning(self.X, self.y)
         else:
             regensburg_pediatric_appendicitis = fetch_ucirepo(id=938)
             self.cleaning(regensburg_pediatric_appendicitis.data.features, regensburg_pediatric_appendicitis.data.targets)

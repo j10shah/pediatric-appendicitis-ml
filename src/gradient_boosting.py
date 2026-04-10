@@ -12,8 +12,8 @@ import numpy as np
 
 class GradientBoosting(Model):
 
-    def __init__(self, hyper_parms: dict, weight_path=None, val_x=None, val_y=None, log_path = 'gb_log.csv'):
-        super().__init__(hyper_parms, self.cross_entropy, weight_path, val_x, val_y, log_path=log_path)
+    def __init__(self, hyper_parms: dict, weight_path=None, log_path = 'gb_log.csv'):
+        super().__init__(hyper_parms, self.cross_entropy, weight_path, log_path=log_path)
 
     def cross_entropy(self, y_pred, y_act):
         y_pred = np.clip(y_pred ,.00001, .99999)
@@ -42,14 +42,9 @@ class GradientBoosting(Model):
             p = np.clip(np.sum(y == 1) / len(y), .00001, .99999)
             self.F0 = math.log(p/(1-p))
 
-        #prediction = F_0 + sum over all models of lr * gamma * model(X)
         prediction = np.ones(len(y),) * self.F0
 
         for i in range(len(self.models)):
-            #LEAF WISE:
-            # leaf_idxes = self.models[i].apply(X)
-            # prediction += self.learning_rate * np.array([self.gammas[i][li] for li in leaf_idxes]) #this is slow
-
             prediction += self.learning_rate * self.gammas[i] * self.models[i].predict(X)
 
         return prediction
@@ -67,22 +62,13 @@ class GradientBoosting(Model):
         p = self.sig(predictions)
         gamma = np.sum(y - predictions) / np.sum(p * (1 - p))
 
-        #then calculate model contribution to the ensemble - LEAF WISE
-        # leaves = f_n.apply(X)
-        # gammas = {}
-        # for leaf in np.unique(leaves):
-        #     leaf_indexes = np.where(leaves == leaf)
-        #     p = self.sig(predictions[leaf_indexes])
-        #     gamma = np.sum(y[leaf_indexes] - predictions[leaf_indexes]) / np.sum(p * (1 - p))
-        #     gammas[leaf] = gamma
 
         self.models.append(f_n)
-        # self.gammas.append(gammas)
         self.gammas.append(gamma)
 
     def save_weights(self):
         # raise NotImplementedError
-        print(self.gammas[-1])
+        # print(self.gammas[-1])
         pass
     
 
